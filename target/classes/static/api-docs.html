@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rasmoo API - Documentação</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #7f8c8d;
+        }
+        .endpoint {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .method {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            color: white;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .get { background-color: #28a745; }
+        .post { background-color: #007bff; }
+        .put { background-color: #ffc107; color: #212529; }
+        .delete { background-color: #dc3545; }
+        .url {
+            font-family: 'Courier New', monospace;
+            background-color: #e9ecef;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+        .description {
+            margin-top: 10px;
+            color: #6c757d;
+        }
+        .example {
+            background-color: #f1f3f4;
+            border-left: 4px solid #3498db;
+            padding: 10px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+        .base-url {
+            background-color: #e8f5e8;
+            border: 1px solid #28a745;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Rasmoo API - Documentação</h1>
+        
+        <div class="base-url">
+            <h3>🌐 URL Base da API</h3>
+            <p><strong>Desenvolvimento:</strong> <span class="url">http://localhost:8082/rasplus</span></p>
+        </div>
+
+        <h2>👥 Users - Gerenciamento de Usuários</h2>
+        
+        <div class="endpoint">
+            <span class="method get">GET</span>
+            <span class="url">/users</span>
+            <div class="description">Lista todos os usuários cadastrados no sistema</div>
+            <div class="example">
+curl -X GET http://localhost:8082/rasplus/users
+            </div>
+        </div>
+
+        <div class="endpoint">
+            <span class="method get">GET</span>
+            <span class="url">/users/{id}</span>
+            <div class="description">Busca um usuário específico pelo ID</div>
+            <div class="example">
+curl -X GET http://localhost:8082/rasplus/users/1
+            </div>
+        </div>
+
+        <div class="endpoint">
+            <span class="method get">GET</span>
+            <span class="url">/users/email/{email}</span>
+            <div class="description">Busca um usuário pelo email</div>
+            <div class="example">
+curl -X GET http://localhost:8082/rasplus/users/email/joao@email.com
+            </div>
+        </div>
+
+        <div class="endpoint">
+            <span class="method get">GET</span>
+            <span class="url">/users/phone/{phone}</span>
+            <div class="description">Busca um usuário pelo telefone</div>
+            <div class="example">
+curl -X GET http://localhost:8082/rasplus/users/phone/11999999999
+            </div>
+        </div>
+
+        <div class="endpoint">
+            <span class="method post">POST</span>
+            <span class="url">/users</span>
+            <div class="description">Cria um novo usuário no sistema</div>
+            <div class="example">
+curl -X POST http://localhost:8082/rasplus/users \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "João Silva",
+    "email": "joao@email.com",
+    "phone": "11999999999",
+    "cpf": "12345678901",
+    "userType": {"id": 3},
+    "subscriptionType": {"id": 2}
+  }'
+            </div>
+        </div>
+
+        <div class="endpoint">
+            <span class="method put">PUT</span>
+            <span class="url">/users/{id}</span>
+            <div class="description">Atualiza um usuário existente</div>
+            <div class="example">
+curl -X PUT http://localhost:8082/rasplus/users/1 \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "João Silva Atualizado",
+    "email": "joao.novo@email.com"
+  }'
+            </div>
+        </div>
+
+        <div class="endpoint">
+            <span class="method delete">DELETE</span>
+            <span class="url">/users/{id}</span>
+            <div class="description">Remove um usuário do sistema</div>
+            <div class="example">
+curl -X DELETE http://localhost:8082/rasplus/users/1
+            </div>
+        </div>
+
+        <h2>📋 Subscription Types - Tipos de Assinatura</h2>
+
+        <div class="endpoint">
+            <span class="method get">GET</span>
+            <span class="url">/subscription-types</span>
+            <div class="description">Lista todos os tipos de assinatura disponíveis</div>
+            <div class="example">
+curl -X GET http://localhost:8082/rasplus/subscription-types
+            </div>
+        </div>
+
+        <div class="endpoint">
+            <span class="method get">GET</span>
+            <span class="url">/subscription-types/{id}</span>
+            <div class="description">Busca um tipo de assinatura específico pelo ID</div>
+            <div class="example">
+curl -X GET http://localhost:8082/rasplus/subscription-types/1
+            </div>
+        </div>
+
+        <div class="endpoint">
+            <span class="method get">GET</span>
+            <span class="url">/subscription-types/product-key/{productKey}</span>
+            <div class="description">Busca um tipo de assinatura pela chave do produto</div>
+            <div class="example">
+curl -X GET http://localhost:8082/rasplus/subscription-types/product-key/MONTH22
+            </div>
+        </div>
+
+        <div class="endpoint">
+            <span class="method post">POST</span>
+            <span class="url">/subscription-types</span>
+            <div class="description">Cria um novo tipo de assinatura</div>
+            <div class="example">
+curl -X POST http://localhost:8082/rasplus/subscription-types \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "PLANO SEMESTRAL",
+    "accessMonths": 6,
+    "price": 400.00,
+    "productKey": "SEMESTER22"
+  }'
+            </div>
+        </div>
+
+        <h2>📊 Exemplos de Resposta</h2>
+
+        <h3>Usuário</h3>
+        <div class="example">
+{
+  "id": 1,
+  "name": "João Silva",
+  "email": "joao@email.com",
+  "phone": "11999999999",
+  "cpf": "12345678901",
+  "dtSubscription": "2025-01-01",
+  "dtExpiration": "2025-12-31",
+  "userType": {
+    "id": 3,
+    "name": "ALUNO",
+    "description": "Aluno da plataforma - cadastro via fluxo normal"
+  },
+  "subscriptionType": {
+    "id": 2,
+    "name": "PLANO ANUAL",
+    "accessMonths": 12,
+    "price": 697.00,
+    "productKey": "YEAR22"
+  }
+}
+        </div>
+
+        <h3>Tipo de Assinatura</h3>
+        <div class="example">
+{
+  "id": 1,
+  "name": "PLANO MENSAL",
+  "accessMonths": 1,
+  "price": 75.00,
+  "productKey": "MONTH22"
+}
+        </div>
+
+        <h2>🔧 Status da Aplicação</h2>
+        <p><strong>Status:</strong> ✅ Aplicação funcionando normalmente</p>
+        <p><strong>Swagger UI:</strong> ❌ Temporariamente indisponível devido a incompatibilidade com Spring Boot 3.5.5</p>
+        <p><strong>Alternativa:</strong> Esta documentação HTML + Postman Collection disponível no projeto</p>
+
+        <h2>📝 Notas Importantes</h2>
+        <ul>
+            <li>Todos os endpoints estão funcionais e testados</li>
+            <li>A API possui validação Bean Validation nos DTOs</li>
+            <li>Sistema de exceções customizadas implementado</li>
+            <li>Documentação Swagger será reativada quando houver compatibilidade</li>
+        </ul>
+    </div>
+</body>
+</html>

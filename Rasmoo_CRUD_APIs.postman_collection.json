@@ -1,0 +1,421 @@
+{
+	"info": {
+		"_postman_id": "12345678-1234-1234-1234-123456789012",
+		"name": "Rasmoo CRUD APIs",
+		"description": "Coleção completa das APIs CRUD para o sistema Rasmoo - Gerenciamento de usuários, tipos de usuário, assinaturas e pagamentos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "UserType APIs",
+			"item": [
+				{
+					"name": "Get All UserTypes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/user-types",
+							"host": ["{{base_url}}"],
+							"path": ["user-types"]
+						}
+					}
+				},
+				{
+					"name": "Get UserType by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/user-types/1",
+							"host": ["{{base_url}}"],
+							"path": ["user-types", "1"]
+						}
+					}
+				},
+				{
+					"name": "Create UserType",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"MODERADOR\",\n  \"description\": \"Moderador da plataforma\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/user-types",
+							"host": ["{{base_url}}"],
+							"path": ["user-types"]
+						}
+					}
+				},
+				{
+					"name": "Update UserType",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"MODERADOR SENIOR\",\n  \"description\": \"Moderador sênior da plataforma\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/user-types/4",
+							"host": ["{{base_url}}"],
+							"path": ["user-types", "4"]
+						}
+					}
+				},
+				{
+					"name": "Delete UserType",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/user-types/4",
+							"host": ["{{base_url}}"],
+							"path": ["user-types", "4"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "SubscriptionType APIs",
+			"item": [
+				{
+					"name": "Get All SubscriptionTypes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/subscription-types",
+							"host": ["{{base_url}}"],
+							"path": ["subscription-types"]
+						}
+					}
+				},
+				{
+					"name": "Get SubscriptionType by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/subscription-types/1",
+							"host": ["{{base_url}}"],
+							"path": ["subscription-types", "1"]
+						}
+					}
+				},
+				{
+					"name": "Get SubscriptionType by Product Key",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/subscription-types/product-key/YEAR22",
+							"host": ["{{base_url}}"],
+							"path": ["subscription-types", "product-key", "YEAR22"]
+						}
+					}
+				},
+				{
+					"name": "Create SubscriptionType",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"PLANO TRIMESTRAL\",\n  \"accessMonths\": 3,\n  \"price\": 225.00,\n  \"productKey\": \"QUARTER25\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/subscription-types",
+							"host": ["{{base_url}}"],
+							"path": ["subscription-types"]
+						}
+					}
+				},
+				{
+					"name": "Update SubscriptionType",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"PLANO TRIMESTRAL PREMIUM\",\n  \"accessMonths\": 3,\n  \"price\": 250.00,\n  \"productKey\": \"QUARTER25\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/subscription-types/4",
+							"host": ["{{base_url}}"],
+							"path": ["subscription-types", "4"]
+						}
+					}
+				},
+				{
+					"name": "Delete SubscriptionType",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/subscription-types/4",
+							"host": ["{{base_url}}"],
+							"path": ["subscription-types", "4"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "User APIs",
+			"item": [
+				{
+					"name": "Get All Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users",
+							"host": ["{{base_url}}"],
+							"path": ["users"]
+						}
+					}
+				},
+				{
+					"name": "Get User by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users/1",
+							"host": ["{{base_url}}"],
+							"path": ["users", "1"]
+						}
+					}
+				},
+				{
+					"name": "Get User by Email",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users/email/joao@email.com",
+							"host": ["{{base_url}}"],
+							"path": ["users", "email", "joao@email.com"]
+						}
+					}
+				},
+				{
+					"name": "Get User by CPF",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users/cpf/12345678901",
+							"host": ["{{base_url}}"],
+							"path": ["users", "cpf", "12345678901"]
+						}
+					}
+				},
+				{
+					"name": "Get User by Phone",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users/phone/11999999999",
+							"host": ["{{base_url}}"],
+							"path": ["users", "phone", "11999999999"]
+						}
+					}
+				},
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Maria Santos\",\n  \"email\": \"maria@email.com\",\n  \"phone\": \"11888888888\",\n  \"cpf\": \"98765432100\",\n  \"dtSubscription\": \"2025-01-15\",\n  \"dtExpiration\": \"2025-02-15\",\n  \"userType\": {\n    \"id\": 3\n  },\n  \"subscriptionType\": {\n    \"id\": 1\n  }\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/users",
+							"host": ["{{base_url}}"],
+							"path": ["users"]
+						}
+					}
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"João Silva Santos\",\n  \"email\": \"joao.santos@email.com\",\n  \"phone\": \"11999999999\",\n  \"cpf\": \"12345678901\",\n  \"dtSubscription\": \"2025-01-01\",\n  \"dtExpiration\": \"2025-12-31\",\n  \"userType\": {\n    \"id\": 3\n  },\n  \"subscriptionType\": {\n    \"id\": 2\n  }\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/users/1",
+							"host": ["{{base_url}}"],
+							"path": ["users", "1"]
+						}
+					}
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users/2",
+							"host": ["{{base_url}}"],
+							"path": ["users", "2"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "UserPaymentInfo APIs",
+			"item": [
+				{
+					"name": "Get All UserPaymentInfo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/user-payment-info",
+							"host": ["{{base_url}}"],
+							"path": ["user-payment-info"]
+						}
+					}
+				},
+				{
+					"name": "Get UserPaymentInfo by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/user-payment-info/1",
+							"host": ["{{base_url}}"],
+							"path": ["user-payment-info", "1"]
+						}
+					}
+				},
+				{
+					"name": "Get UserPaymentInfo by Card Number",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/user-payment-info/card/1234567890123456",
+							"host": ["{{base_url}}"],
+							"path": ["user-payment-info", "card", "1234567890123456"]
+						}
+					}
+				},
+				{
+					"name": "Get UserPaymentInfo by User ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/user-payment-info/user/1",
+							"host": ["{{base_url}}"],
+							"path": ["user-payment-info", "user", "1"]
+						}
+					}
+				},
+				{
+					"name": "Create UserPaymentInfo",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"cardNumber\": \"9876543210987654\",\n  \"cardExpirationMonth\": 8,\n  \"cardExpirationYear\": 2028,\n  \"cardSecurityCode\": \"456\",\n  \"price\": 75.00,\n  \"instalments\": 1,\n  \"dtPayment\": \"2025-01-15\",\n  \"user\": {\n    \"id\": 2\n  }\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/user-payment-info",
+							"host": ["{{base_url}}"],
+							"path": ["user-payment-info"]
+						}
+					}
+				},
+				{
+					"name": "Update UserPaymentInfo",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"cardNumber\": \"1234567890123456\",\n  \"cardExpirationMonth\": 12,\n  \"cardExpirationYear\": 2027,\n  \"cardSecurityCode\": \"789\",\n  \"price\": 697.00,\n  \"instalments\": 12,\n  \"dtPayment\": \"2025-01-01\",\n  \"user\": {\n    \"id\": 1\n  }\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/user-payment-info/1",
+							"host": ["{{base_url}}"],
+							"path": ["user-payment-info", "1"]
+						}
+					}
+				},
+				{
+					"name": "Delete UserPaymentInfo",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/user-payment-info/2",
+							"host": ["{{base_url}}"],
+							"path": ["user-payment-info", "2"]
+						}
+					}
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8082/rasplus",
+			"type": "string"
+		}
+	]
+}
