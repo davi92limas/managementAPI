@@ -9,18 +9,18 @@
 
 ## 📋 Sobre o Projeto
 
-O **Management API** é uma aplicação back-end robusta e genérica desenvolvida em **Spring Boot** que implementa um
-sistema completo de gerenciamento de usuários com autenticação JWT e controle de acesso baseado em roles. O projeto foi
+O **Management API** é uma aplicação back-end, desenvolvida em **Spring Boot** que implementa um
+sistema de gerenciamento de usuários com autenticação JWT e controle de acesso baseado em roles(USER, MODERATOR, ADMIN). O projeto foi
 projetado para ser **reutilizável** e pode ser facilmente adaptado para diferentes tipos de aplicações que necessitam de
-um sistema de usuários seguro e escalável.
+um sistema de usuários.
 
 ## 🎯 Características Principais
 
 - ✅ **Sistema de Autenticação JWT**
-- ✅ **Controle de Acesso Baseado em Roles** (USER, MODERATOR, ADMIN)
-- ✅ **Tratamento Global de Exceções** Com respostas padronizadas
-- ✅ **Validação de Dados** Com Bean Validation
-- ✅ **Migrações de Banco** Com Flyway
+- ✅ **Controle de Acesso**
+- ✅ **Tratamento Global de Exceções**
+- ✅ **Validação de Dados** 
+- ✅ **Migrações de Banco** 
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -29,7 +29,8 @@ um sistema de usuários seguro e escalável.
 - **Spring Data JPA** - Persistência de dados
 - **Spring Security** - Autenticação e autorização
 - **Spring Web** - APIs REST
-- **Spring Validation** - Validação de dados
+- **Validação de Dados** Com Bean Validation
+- **Migrações de Banco** Com Flyway
 
 ## **🧪 Testes**
 
@@ -70,8 +71,8 @@ O projeto implementa um sistema completo de autenticação **JWT (JSON Web Token
 #### **1. Clone o Repositório**
 
 ```bash
-git clone https://github.com/seu-usuario/user-management-api.git
-cd user-management-api
+git clone https://github.com/davi92limas/managementAPI.git
+cd managementAPI
 ```
 
 #### **2. Configure o Banco de Dados**
