@@ -14,9 +14,9 @@ sistema completo de gerenciamento de usuários com autenticação JWT e controle
 projetado para ser **reutilizável** e pode ser facilmente adaptado para diferentes tipos de aplicações que necessitam de
 um sistema de usuários seguro e escalável.
 
-### 🎯 Características Principais
+## 🎯 Características Principais
 
-API de gerenciamento de usuários
+### API de gerenciamento de usuários
 
 - ✅ **Sistema de Autenticação JWT**
 - ✅ **Controle de Acesso Baseado em Roles** (USER, MODERATOR, ADMIN)
@@ -33,7 +33,7 @@ API de gerenciamento de usuários
 - **Spring Web** - APIs REST
 - **Spring Validation** - Validação de dados
 
-## **🎯 Testes**
+## **🧪 Testes**
 
 - **JUnit 5** - Framework de testes
 - **Mockito** - Mocking para testes unitários
