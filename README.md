@@ -1,15 +1,13 @@
 # Management API - Sistema de Gerenciamento de Usuários
 
-[![Java](https://img.shields.io/badge/Java-21-orange.svg)](https://www.oracle.com/java/)  
-[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.5.5-brightgreen.svg)](https://spring.io/projects/spring-boot)  
-[![MySQL](https://img.shields.io/badge/MySQL-8.0-blue.svg)](https://www.mysql.com/)  
-[![JWT](https://img.shields.io/badge/JWT-Security-red.svg)](https://jwt.io/)  
-[![Docker](https://img.shields.io/badge/Docker-Compose-blue.svg)](https://www.docker.com/)  
-[![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow.svg)](#-status-do-projeto)  
+[![Java](https://img.shields.io/badge/Java-21-orange.svg)](https://www.oracle.com/java/)
+[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.5.5-brightgreen.svg)](https://spring.io/projects/spring-boot)
+[![MySQL](https://img.shields.io/badge/MySQL-8.0-blue.svg)](https://www.mysql.com/)
+[![JWT](https://img.shields.io/badge/JWT-Security-red.svg)](https://jwt.io/)
+[![Docker](https://img.shields.io/badge/Docker-Compose-blue.svg)](https://www.docker.com/)
+[![Status](https://img.shields.io/badge/Status-Production%20Ready-green.svg)](#-status-do-projeto)
 
-
-
-## 📋 Sobre o Projeto  
+## 📋 Sobre o Projeto
 
 O **Management API** é uma aplicação back-end em **Spring Boot** para **gerenciamento de usuários e assinaturas**, com autenticação **JWT** e controle de permissões por roles (**USER, MODERATOR, ADMIN**).  
 
