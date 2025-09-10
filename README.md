@@ -16,8 +16,6 @@ um sistema de usuários seguro e escalável.
 
 ## 🎯 Características Principais
 
-### API de gerenciamento de usuários
-
 - ✅ **Sistema de Autenticação JWT**
 - ✅ **Controle de Acesso Baseado em Roles** (USER, MODERATOR, ADMIN)
 - ✅ **Tratamento Global de Exceções** Com respostas padronizadas
