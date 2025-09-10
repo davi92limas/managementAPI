@@ -1,4 +1,4 @@
-# 🚀 User Management API - Sistema Completo de Gerenciamento de Usuários
+# Management API - Sistema de Gerenciamento de Usuários
 
 [![Java](https://img.shields.io/badge/Java-21-orange.svg)](https://www.oracle.com/java/)
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.5.5-brightgreen.svg)](https://spring.io/projects/spring-boot)
