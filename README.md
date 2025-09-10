@@ -59,8 +59,6 @@ O projeto implementa um sistema completo de autenticação **JWT (JSON Web Token
 
 ## ⚙️ Configuração e Instalação
 
-### **📋 Pré-requisitos**
-
 - ☕ **Java 21+**
 - 📦 **Maven 3.6+**
 - 🐳 **Docker & Docker Compose**
@@ -102,9 +100,8 @@ docker-compose ps
 - **Health Check:** `http://localhost:8080/api/auth/health`
 - **Documentação:** Em desenvolvimento
 
-## 🔑 Autenticação JWT
+## 🔑 Autenticação JWT - Endpoints de Autenticação
 
-### **🚪 Endpoints de Autenticação**
 
 | Método | Endpoint         | Descrição              | Acesso         |
 |--------|------------------|------------------------|----------------|
@@ -185,15 +182,5 @@ user-management-api/
 ├── Rasmoo_CRUD_APIs.postman_collection.json
 └── README.md                          # Este arquivo
 ```
-
-
-## 📚 Recursos Adicionais
-
-### **📖 Documentação Técnica**
-
-- [Spring Boot Reference](https://docs.spring.io/spring-boot/docs/current/reference/html/)
-- [Spring Security JWT](https://docs.spring.io/spring-security/reference/servlet/oauth2/resource-server/jwt.html)
-- [MySQL 8.0 Documentation](https://dev.mysql.com/doc/refman/8.0/en/)
-- [Flyway Documentation](https://flywaydb.org/documentation/)
 
 
