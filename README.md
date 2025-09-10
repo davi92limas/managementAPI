@@ -7,7 +7,7 @@
 [![Docker](https://img.shields.io/badge/Docker-Compose-blue.svg)](https://www.docker.com/)  
 [![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow.svg)](#-status-do-projeto)  
 
----
+
 
 ## 📋 Sobre o Projeto  
 
@@ -15,7 +15,6 @@ O **Management API** é uma aplicação back-end em **Spring Boot** para **geren
 
 👉 Esse projeto simula o **back-end de um sistema real de assinaturas**, pronto para ser plugado em qualquer front-end (web ou mobile).  
 
----
 
 ## 🎯 Características Principais  
 
@@ -25,7 +24,7 @@ O **Management API** é uma aplicação back-end em **Spring Boot** para **geren
 - ✅ Validação de Dados (Bean Validation)  
 - ✅ Migrações de Banco com Flyway  
 
----
+
 
 ## 🛠️ Tecnologias Utilizadas  
 
@@ -38,7 +37,6 @@ O **Management API** é uma aplicação back-end em **Spring Boot** para **geren
 - **Docker & Docker Compose**  
 - **MySQL 8.0**  
 
----
 
 ## 🧪 Testes  
 
@@ -54,7 +52,7 @@ O projeto já conta com testes unitários e de integração:
 ./mvnw test
 ```
 
----
+
 
 ## 🔐 Sistema de Autenticação e Autorização  
 
@@ -73,11 +71,10 @@ O projeto implementa autenticação **JWT** com **Spring Security**.
 | **PUT** /subscription-types/**    | ❌       | ✅               | ✅        |
 | **DELETE** /subscription-types/** | ❌       | ❌               | ✅        |
 
----
+
 
 ## ⚙️ Instalação e Configuração  
-
-### Pré-requisitos  
+ 
 - ☕ Java 21+  
 - 📦 Maven 3.6+  
 - 🐳 Docker & Docker Compose  
@@ -91,7 +88,7 @@ API disponível em:
 - **Base URL:** `http://localhost:8080/api`  
 - **Health Check:** `http://localhost:8080/api/auth/health`  
 
----
+
 
 ## 📡 Exemplos de Uso (Demo)  
 
@@ -125,7 +122,7 @@ Content-Type: application/json
 }
 ```
 
----
+
 
 ## 📁 Estrutura do Projeto  
 
@@ -158,12 +155,12 @@ user-management-api/
 └── README.md                          # Este arquivo
 ```
 
----
 
-## 🛣️ Roadmap  
+
+## 🛣️ Mapeamendo de melhorias  
 
 - [ ] Documentação com Swagger/OpenAPI  
 - [ ] Integração contínua (GitHub Actions)  
 - [ ] Testes de cobertura com Jacoco/Sonar  
 - [ ] Cache com Redis  
-- [ ] Deploy em nuvem (Heroku/AWS)  
+- [ ] Deploy em nuvem (AWS)  
