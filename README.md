@@ -115,7 +115,7 @@ docker-compose ps
 | `GET`  | `/auth/validate` | Validar token          | 🔒 Autenticado |
 | `GET`  | `/auth/health`   | Status do serviço      | 🌐 Público     |
 
----
+
 
 ## 📁 Estrutura do Projeto
 
@@ -186,7 +186,7 @@ user-management-api/
 ├── Rasmoo_CRUD_APIs.postman_collection.json
 └── README.md                          # Este arquivo
 ```
----
+
 
 ## 📚 Recursos Adicionais
 
