@@ -16,21 +16,15 @@ um sistema de usuários seguro e escalável.
 
 ### 🎯 Características Principais
 
-Esta API genérica de gerenciamento de usuários oferece:
+API de gerenciamento de usuários
 
-- ✅ **Sistema de Autenticação JWT** completo e seguro
+- ✅ **Sistema de Autenticação JWT**
 - ✅ **Controle de Acesso Baseado em Roles** (USER, MODERATOR, ADMIN)
-- ✅ **Tratamento Global de Exceções** com respostas padronizadas
-- ✅ **Validação de Dados** robusta com Bean Validation
-- ✅ **Arquitetura em Camadas** bem estruturada
-- ✅ **Containerização** com Docker e Docker Compose
-- ✅ **Migrações de Banco** automatizadas com Flyway
-- ✅ **Utilitários de Segurança** (gerador de senhas, validação)
-- ✅ **Pronto para Produção** com configurações otimizadas
+- ✅ **Tratamento Global de Exceções** Com respostas padronizadas
+- ✅ **Validação de Dados** Com Bean Validation
+- ✅ **Migrações de Banco** Com Flyway
 
 ## 🛠️ Tecnologias Utilizadas
-
-### **Backend Core**
 
 - **Java 21** - Linguagem de programação
 - **Spring Boot 3.5.5** - Framework principal
@@ -39,18 +33,89 @@ Esta API genérica de gerenciamento de usuários oferece:
 - **Spring Web** - APIs REST
 - **Spring Validation** - Validação de dados
 
-### **Testes**
+## **🎯 Testes**
 
 - **JUnit 5** - Framework de testes
 - **Mockito** - Mocking para testes unitários
 - **Spring Boot Test** - Testes de integração
 - **AssertJ** - Assertions fluentes
 
-### **Documentação**
 
-- **SpringDoc OpenAPI 3** - Documentação automática
-- **Swagger UI** - Interface interativa da API
-- **Postman Collection** - Coleção de testes
+## 🔐 Sistema de Autenticação e Autorização
+
+O projeto implementa um sistema completo de autenticação **JWT (JSON Web Tokens)** com **Spring Security**:
+
+#### **🛡️ Matriz de Permissões**
+
+| Endpoint                          | 👤 USER | 👨‍💼 MODERATOR | 👑 ADMIN |
+|-----------------------------------|---------|-----------------|----------|
+| **GET** /users/**                 | ✅       | ✅               | ✅        |
+| **POST** /users                   | ❌       | ✅               | ✅        |
+| **PUT** /users/**                 | ✅       | ✅               | ✅        |
+| **DELETE** /users/**              | ❌       | ❌               | ✅        |
+| **GET** /subscription-types/**    | ✅       | ✅               | ✅        |
+| **POST** /subscription-types      | ❌       | ✅               | ✅        |
+| **PUT** /subscription-types/**    | ❌       | ✅               | ✅        |
+| **DELETE** /subscription-types/** | ❌       | ❌               | ✅        |
+
+## ⚙️ Configuração e Instalação
+
+### **📋 Pré-requisitos**
+
+- ☕ **Java 21+**
+- 📦 **Maven 3.6+**
+- 🐳 **Docker & Docker Compose**
+- 🗄️ **MySQL 8.0** (via Docker)
+
+### **🚀 Instalação**
+
+#### **1. Clone o Repositório**
+
+```bash
+git clone https://github.com/seu-usuario/user-management-api.git
+cd user-management-api
+```
+
+#### **2. Configure o Banco de Dados**
+
+```bash
+# Inicie o MySQL
+docker-compose up -d
+
+# Verifique se está rodando
+docker-compose ps
+```
+
+#### **3. Execute a Aplicação**
+
+```bash
+# Compile e execute
+./mvnw spring-boot:run
+
+# Ou compile e execute separadamente
+./mvnw clean compile
+./mvnw spring-boot:run
+```
+
+#### **4. Acesse a Aplicação**
+
+- **API Base:** `http://localhost:8080/api`
+- **Health Check:** `http://localhost:8080/api/auth/health`
+- **Documentação:** Em desenvolvimento
+
+## 🔑 Autenticação JWT
+
+### **🚪 Endpoints de Autenticação**
+
+| Método | Endpoint         | Descrição              | Acesso         |
+|--------|------------------|------------------------|----------------|
+| `POST` | `/auth/register` | Registrar novo usuário | 🌐 Público     |
+| `POST` | `/auth/login`    | Fazer login            | 🌐 Público     |
+| `POST` | `/auth/refresh`  | Renovar token          | 🔒 Autenticado |
+| `GET`  | `/auth/validate` | Validar token          | 🔒 Autenticado |
+| `GET`  | `/auth/health`   | Status do serviço      | 🌐 Público     |
+
+---
 
 ## 📁 Estrutura do Projeto
 
@@ -121,113 +186,7 @@ user-management-api/
 ├── Rasmoo_CRUD_APIs.postman_collection.json
 └── README.md                          # Este arquivo
 ```
-
-## 🔐 Sistema de Autenticação e Autorização
-
-O projeto implementa um sistema completo de autenticação **JWT (JSON Web Tokens)** com **Spring Security**:
-
-#### **🛡️ Matriz de Permissões**
-
-| Endpoint                          | 👤 USER | 👨‍💼 MODERATOR | 👑 ADMIN |
-|-----------------------------------|---------|-----------------|----------|
-| **GET** /users/**                 | ✅       | ✅               | ✅        |
-| **POST** /users                   | ❌       | ✅               | ✅        |
-| **PUT** /users/**                 | ✅       | ✅               | ✅        |
-| **DELETE** /users/**              | ❌       | ❌               | ✅        |
-| **GET** /subscription-types/**    | ✅       | ✅               | ✅        |
-| **POST** /subscription-types      | ❌       | ✅               | ✅        |
-| **PUT** /subscription-types/**    | ❌       | ✅               | ✅        |
-| **DELETE** /subscription-types/** | ❌       | ❌               | ✅        |
-
-### **👥 Usuários Padrão**
-
-| Username    | Email                        | Role      | Senha      |
-|-------------|------------------------------|-----------|------------|
-| `admin`     | admin@usermanagement.com     | ADMIN     | `password` |
-| `moderator` | moderator@usermanagement.com | MODERATOR | `password` |
-| `user`      | user@usermanagement.com      | USER      | `password` |
-
-## ⚙️ Configuração e Instalação
-
-### **📋 Pré-requisitos**
-
-- ☕ **Java 21+**
-- 📦 **Maven 3.6+**
-- 🐳 **Docker & Docker Compose**
-- 🗄️ **MySQL 8.0** (via Docker)
-
-### **🚀 Instalação**
-
-#### **1. Clone o Repositório**
-
-```bash
-git clone https://github.com/seu-usuario/user-management-api.git
-cd user-management-api
-```
-
-#### **2. Configure o Banco de Dados**
-
-```bash
-# Inicie o MySQL
-docker-compose up -d
-
-# Verifique se está rodando
-docker-compose ps
-```
-
-#### **3. Execute a Aplicação**
-
-```bash
-# Compile e execute
-./mvnw spring-boot:run
-
-# Ou compile e execute separadamente
-./mvnw clean compile
-./mvnw spring-boot:run
-```
-
-#### **4. Acesse a Aplicação**
-
-- **API Base:** `http://localhost:8080/api`
-- **Health Check:** `http://localhost:8080/api/auth/health`
-- **Documentação:** Em desenvolvimento
-
-## 🔑 Autenticação JWT
-
-### **🚪 Endpoints de Autenticação**
-
-| Método | Endpoint         | Descrição              | Acesso         |
-|--------|------------------|------------------------|----------------|
-| `POST` | `/auth/register` | Registrar novo usuário | 🌐 Público     |
-| `POST` | `/auth/login`    | Fazer login            | 🌐 Público     |
-| `POST` | `/auth/refresh`  | Renovar token          | 🔒 Autenticado |
-| `GET`  | `/auth/validate` | Validar token          | 🔒 Autenticado |
-| `GET`  | `/auth/health`   | Status do serviço      | 🌐 Público     |
-
-## 🐳 Containerização
-
-### **Docker Compose**
-
-```yaml
-# docker-compose.yml
-services:
-  mysql:
-    image: mysql:8.0
-    container_name: user-management-mysql
-    command: --default-authentication-plugin=mysql_native_password
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: USER_MANAGEMENT
-      MYSQL_USER: admin
-      MYSQL_PASSWORD: admin123
-    ports:
-      - "3306:3306"
-    volumes:
-      - mysql_data:/var/lib/mysql
-
-volumes:
-  mysql_data:
-```
+---
 
 ## 📚 Recursos Adicionais
 
@@ -238,10 +197,4 @@ volumes:
 - [MySQL 8.0 Documentation](https://dev.mysql.com/doc/refman/8.0/en/)
 - [Flyway Documentation](https://flywaydb.org/documentation/)
 
-### **🛠️ Ferramentas Recomendadas**
-
-- **IDE:** IntelliJ IDEA ou VS Code
-- **API Testing:** Postman ou Insomnia
-- **Database:** MySQL Workbench
-- **Containers:** Docker Desktop
 
