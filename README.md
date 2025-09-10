@@ -9,7 +9,7 @@
 
 ## 📋 Sobre o Projeto
 
-O **User Management API** é uma aplicação back-end robusta e genérica desenvolvida em **Spring Boot** que implementa um
+O **Management API** é uma aplicação back-end robusta e genérica desenvolvida em **Spring Boot** que implementa um
 sistema completo de gerenciamento de usuários com autenticação JWT e controle de acesso baseado em roles. O projeto foi
 projetado para ser **reutilizável** e pode ser facilmente adaptado para diferentes tipos de aplicações que necessitam de
 um sistema de usuários seguro e escalável.
